@@ -10,7 +10,8 @@ class SplashViewBody extends StatefulWidget {
   State<SplashViewBody> createState() => _SplashViewBodyState();
 }
 
-class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProviderStateMixin {
+class _SplashViewBodyState extends State<SplashViewBody>
+    with SingleTickerProviderStateMixin {
   late AnimationController animationController;
   late Animation<Offset> slidinAnimation;
   @override
@@ -18,40 +19,40 @@ class _SplashViewBodyState extends State<SplashViewBody> with SingleTickerProvid
     super.initState();
     initSlidingAnimation();
     navigateToHome();
-    
   }
 
- 
   @override
   void dispose() {
     super.dispose();
     animationController.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
-    return  Column(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Image.asset(AssetsData.logo),
-          const SizedBox(height: 2,),
-          SlidingText(slidinAnimation: slidinAnimation),
-
-
-        ],
-    
+      children: [
+        Image.asset(AssetsData.logo),
+        const SizedBox(
+          height: 2,
+        ),
+        SlidingText(slidinAnimation: slidinAnimation),
+      ],
     );
   }
+
   void initSlidingAnimation() {
-    animationController=AnimationController(vsync: this,duration: const Duration(seconds: 1));
-    slidinAnimation=Tween<Offset>(begin:const Offset(0,3) ,end:Offset.zero ) .animate(animationController);
+    animationController =
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
+    slidinAnimation = Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero)
+        .animate(animationController);
     animationController.forward();
   }
-   void navigateToHome() {
-    Future.delayed(const Duration(seconds: 2),(){
-     GoRouter.of(context).push('/homeView');
-    
+
+  void navigateToHome() {
+    Future.delayed(const Duration(seconds: 2), () {
+      GoRouter.of(context).push('/homeView');
     });
   }
 }
-

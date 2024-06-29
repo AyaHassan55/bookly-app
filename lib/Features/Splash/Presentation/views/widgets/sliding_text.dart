@@ -12,11 +12,15 @@ class SlidingText extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: slidinAnimation,
-      builder: (context, _){
-           return SlideTransition(position: slidinAnimation,
-      child: const Text('Read Free Books',textAlign: TextAlign.center,),);
-      },  
-     
-      );
+      builder: (context, _) {
+        return SlideTransition(
+          position: slidinAnimation,
+          child: const Text(
+            'Read Free Books',
+            textAlign: TextAlign.center,
+          ),
+        );
+      },
+    );
   }
 }
