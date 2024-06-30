@@ -66,7 +66,7 @@ packages:
     source: hosted
     version: "1.0.8"
   dartz:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: dartz
       sha256: e6acf34ad2e31b1eb00948692468c30ab48ac8250e0f0df661e29f12dd252168
@@ -74,7 +74,7 @@ packages:
     source: hosted
     version: "0.10.1"
   dio:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: dio
       sha256: "11e40df547d418cc0c4900a9318b26304e665da6fa4755399a9ff9efd09034b5"
@@ -82,7 +82,7 @@ packages:
     source: hosted
     version: "5.4.3+1"
   equatable:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: equatable
       sha256: c2b87cb7756efdf69892005af546c56c0b5037f54d2a88269b4f347a505e3ca2
@@ -111,7 +111,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_bloc:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: flutter_bloc
       sha256: b594505eac31a0518bdcb4b5b79573b8d9117b193cc80cc12e17d639b10aa27a
