@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:bookly_app/Core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/Core/widgets/custom_progress_indicator.dart';
@@ -14,15 +13,16 @@ class FeaturedBooksListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<FeaturedBooksCubit, FeaturedBooksState>(
       builder: (context, state) {
-        log('//////$state');
+        
         if (state is FeaturedBooksSuccess) {
           return SizedBox(
             height: MediaQuery.of(context).size.height * .3,
             child: ListView.builder(
             scrollDirection: Axis.horizontal,
+             itemCount: state.books.length,
             itemBuilder: (context, index) {
               return  Padding(
-                padding:const EdgeInsets.symmetric(horizontal: 2.0),
+                padding:const EdgeInsets.symmetric(horizontal: 10.0),
                 child: CustomBookImage(
                   imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail),
               );
