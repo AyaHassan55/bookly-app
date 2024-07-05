@@ -1,14 +1,15 @@
 import 'package:bookly_app/Core/utilis/app_router.dart';
 import 'package:bookly_app/Core/utilis/assets.dart';
 import 'package:bookly_app/Core/utilis/styles.dart';
+import 'package:bookly_app/Features/Home/data/models/book_name/book_name.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly_app/constant.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
-
+  const BookListViewItem({super.key, required this.bookModel});
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return InkWell(
