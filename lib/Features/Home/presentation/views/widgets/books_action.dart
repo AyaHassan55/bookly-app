@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/utilis/functions/launch_url.dart';
 import 'package:bookly_app/Core/widgets/custom_button.dart';
 import 'package:bookly_app/Features/Home/data/models/book_name/book_name.dart';
 import 'package:flutter/material.dart';
@@ -22,13 +23,10 @@ class BooksAction extends StatelessWidget {
           )),
           Expanded(
               child: CustomButton(
-                onPressed: ()async{
-                  Uri uri=Uri.parse(bookModel.volumeInfo.previewLink!);
-                   if (await canLaunchUrl(uri)) {
-                     await launchUrl(uri);
-                  }
+                onPressed: (){
+                 launchCustomUrl(context,bookModel.volumeInfo.previewLink!);
                 },
-            text: 'Preview',
+            text: getText(bookModel),
             fontSize: 16,
             backgroundColor: const Color.fromARGB(255, 236, 92, 92),
             textColor: Colors.white,
@@ -39,5 +37,13 @@ class BooksAction extends StatelessWidget {
         ],
       ),
     );
+  }
+  
+  String getText(BookModel bookModel) {
+    if(bookModel.volumeInfo.previewLink==null){
+      return 'Not Available';
+    }else{
+      return 'Preview';
+    }
   }
 }
