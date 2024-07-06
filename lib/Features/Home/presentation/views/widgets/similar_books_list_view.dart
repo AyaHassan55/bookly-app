@@ -17,10 +17,12 @@ class SimilarBooksListView extends StatelessWidget {
     height: MediaQuery.of(context).size.height * .2,
     child: ListView.builder(
         scrollDirection: Axis.horizontal,
+        itemCount: state.books.length,
         itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 1.0),
-            child: CustomBookImage(imageUrl: 'https://in.pinterest.com/pin/AcjxcogA1T_vjaXWyXouzxhFupHXx52IN9Ei15-6BeYGoapPi9hxPgk/',),
+          return  Padding(
+            padding:const EdgeInsets.symmetric(horizontal: 5.0),
+            child: CustomBookImage(
+              imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,),
           );
         }
         ),
